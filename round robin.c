@@ -1,3 +1,21 @@
+// 1. Start
+// 2. Input the processes, their burst time , arrival time and time quantum
+// 3. Create an array remaining time to keep track of remaining burst time of processes, initialize it with the burst time array
+// 4. Traverse remaining array until all processes get completely executed
+//           a) find process   with minimum arrival time with    remainingTime !=0
+//           b)If remainingtime<=Quantum,
+//                 a)set current_time +=remainingTime
+//                 b)set completionTime = current_time + arrivalTime[1];
+//                 c)set remainingTime = 0;
+//                 d)set turnaroundTime = completionTime - arrivalTime;
+//                 e)set waitingTime = turnaroundTime - burstTime;
+//             else
+//                 a)current_time += quantum;
+//                 b)remainingTime -= quatum;
+// 5. Find average waiting time = total_waiting_time / no_of_processes 
+// 6. Find average turnaround time = total_turnaround_time / no_of_processes 
+// 7. End
+
 #include <stdio.h>
 int n, i, j, time, temp = 0, t, count = 0, completionTime[10], tat[10], wt[10], current_time = 0, burst[10] = {0}, left[10] = {0}, order[10] = {0}, arrival[10] = {0};
 float total_tat = 0, total_wt = 0;
