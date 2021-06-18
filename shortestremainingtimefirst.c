@@ -1,3 +1,23 @@
+// ALGORITHM:
+// 1. Start
+// 2. Input the processes, their burst time (bt) and arrival time (at)
+// 3 Set currentTime=arrivalTime of smallest process
+// 4. Sort the processes according to burst time
+// 5. Create an array remaining time to keep track of remaining burst time of processes, initialize it with the burst time array
+// 6. Traverse until all processes get completely executed
+//    a) From remaining array,find process   with minimum remaining time whose current_time >= arrival and completed=0 
+//    b) Reduce its remaining time by 1 and increment current_time
+//    c)  if its remaining time becomes 0 then,
+//             1) set completed=1
+//             2)completionTime=current_time
+//             3)Find turn around time and waiting time  
+//              	  turnaroundtime = completionTime - arrivalTime;
+//              	  waitingTime = turnaroundTime - burst[i];
+//    d)sort  the remaining time array
+// 7. Find average waiting time = total_waiting_time / no_of_processes
+// 8. Find average turnaround time = total_turnaround_time / no_of_processes
+// 9. End
+
 #include <stdio.h>
 int n, i, o = 1, j = 0, temp, store = 0, completionTime = 0, proc[10], loop, smallest, remaining[10], current_time, arrival[10] = {0}, completed[10] = {0}, tat, order[30], wt, burst[10] = {0}, chart[50] = {0};
 float total_tat = 0, total_wt = 0;
