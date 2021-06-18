@@ -1,3 +1,21 @@
+
+// ALGORITHM:
+// 1. Start
+// 2. Input the processes, their burst time  and arrival time 
+// 3. Sort the processes according to arrival time
+// 4. Find  completion Time 
+//   	a)for first process  , completionTime = bursttime + arrivaltime[1]
+//    	b)for other processes , completionTime+=burstTime
+// 5. Find turnaround time (tat) = completionTime-arrivalTime , for all processes
+// 6. Find waiting time=turnaroundTime-burstTime , for all processes
+// 7. if waiting time < 0 then 
+//           a)completionTime += abs(waitingTime);
+//           b)turnaroundtime += abs(waitingTime);
+//           c)waitingTime = 0;
+// 6. Find average waiting time = total_waiting_time / no_of_processes
+// 7. Find average turnaround time = total_turnaround_time / no_of_processes
+// 8. End
+
 #include <stdio.h>
 #include <stdlib.h>
 int n, i, j, temp = 0, t, completionTime[10], tat[10], wt[10], burst[10] = {0}, arrival[10] = {0}, order[10] = {0};
