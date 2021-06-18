@@ -1,3 +1,19 @@
+// 1. Start
+// 2. Input the processes, their burst time , arrival time ,priority 
+// 3. Set currentTime=arrivalTime of smallest process
+// 3. Sort the processes according to priority 
+// 4. Take the unvisited process with minimum burst time and check if it has arrived in ready queue
+// 5. If it has arrived, find waiting time ,turnaround time,completion time and set it as visited. else move to next process
+//                 a)waitingTime = currentTime – arrivalTime;
+//                 b)turnAroundTime = waitingTime+ burstTime;
+//                 c)completionTime= currentTime + burst[i];
+//  7.If no process is  there in queue, increment current time 
+//  8. Continue traversing till each process is scheduled
+//  9. Find average waiting time = total_waiting_time / no_of_processes
+// 10. Find average turnaround time = total_turnaround_time / no_of_processes
+// 11. End
+
+
 #include <stdio.h>
 int n, i, j, w, yes, temp, completionTime[10], proc[10], loop, smallest, current_time, sorted[10], priority[10], arrival[10] = {0}, visited[10] = {0}, tat[10], order[10], wt[10], burst[10] = {0}, visited[10];
 float total_tat = 0, total_wt = 0;
